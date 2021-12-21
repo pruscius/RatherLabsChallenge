@@ -1,28 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { getTrivia } from '../../common/redux/actions';
-import { useSelector, useDispatch } from 'react-redux';
-import TriviaCover from '../TriviaCover/TriviaCover';
-import TriviaQuestions from '../TriviaQuestions/TriviaQuestions';
+import {  useDispatch } from 'react-redux';
 
 export default function Home() {
     const dispatch = useDispatch();
-    const show = useSelector(state => state.show)
 
-    const [showQuestions, setShowQuestions] = useState(false)
-
-    useEffect(() => {
-        dispatch(getTrivia());
-    }, [dispatch])
-
+    function handleClick(e) {
+        let category = e.target.name;
+        dispatch(getTrivia(category))
+    }
 
     return(
         <div> 
-            <div>Trivia Home</div>
-            { show === 'cover' ?
-                <TriviaCover />
-                : 
-               <TriviaQuestions />
-            }
+            <Link to="/play">
+                <button name="historia" onClick={(e) => handleClick(e)}>historia</button>
+            </Link>
         </div>
     )
 }

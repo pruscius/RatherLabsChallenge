@@ -1,26 +1,53 @@
 {
-    "title": "Trivia de prueba",
+    "title": "Historia",
     "image": "https://48tools.com/wp-content/uploads/2015/09/shortlink.png",
+    "category": "historia",
     "questions": [
         {
-        "text": "Pregunta 1",
+        "text": "¿Qué importante batalla tuvo lugar en 1815?",
         "image":
         "https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg",
         "lifetimeSeconds": 10,
         "options": [
-            { "text": "Opcion1"," correct": true },
-            { "text": "Opcion2", "correct": false },
-            { "text": "Opcion3", "correct": true }
+            { "text": "Stalingrado"," correct": false },
+            { "text": "Normandía", "correct": false },
+            { "text": "Waterloo", "correct": true },
+            { "text": "Kursk", "correct": false }
         ]
         },
         {
-        "text": "Pregunta 2",
+        "text": "¿En qué año se disolvió la Unión Soviética?",
         "image": "https://filedn.com/ltOdFv1aqz1YIFhf4gTY8D7/ingus-info/BLOGS/Photography-stocks3/stock-photography-slider.jpg",
         "lifetimeSeconds": 5,
         "options": [
-            { "text": "Opcion1", "correct": true },
-            { "text": "Opcion2", "correct": false },
-            { "text": "Opcion3", "correct": false }
+            { "text": "1975", "correct": false },
+            { "text": "1956", "correct": false },
+            { "text": "1989", "correct": false },
+            { "text": "1991", "correct": true }
+        ]
+        },
+        {
+            "text": "¿A quién le entregó Jose de San Martin el sable corvo en su testamento?",
+        "image":
+        "https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg",
+        "lifetimeSeconds": 10,
+        "options": [
+            { "text": "Manuel Belgrano"," correct": false },
+            { "text": "Juan Manuel de Rosas", "correct": true },
+            { "text": "Bernardino Rivadavia", "correct": false },
+            { "text": "Bartolomé Mitre", "correct": false }
+        ]
+        },
+        {
+        "text": "¿En qué año fue asesinado John F. Kennedy?",
+        "image":
+        "https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg",
+        "lifetimeSeconds": 10,
+        "options": [
+            { "text": "1960"," correct": false },
+            { "text": "1963", "correct": true },
+            { "text": "1959", "correct": false },
+            { "text": "1967", "correct": false }
         ]
         }
         ]

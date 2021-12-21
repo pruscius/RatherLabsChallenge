@@ -1,12 +1,21 @@
 import './App.css';
-import Home from './components/Home/Home';
-import TriviaQuestions from './components/TriviaQuestions/TriviaQuestions';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import home from './components/Home/Home';
+import trivia from './components/Trivia/Trivia';
+
 
 function App() {
+
+  const Home = new home()
+  const Trivia = new trivia()
+
   return (
-    <div>
-      <Home />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={Home} />
+        <Route exact path="/play" element={Trivia} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

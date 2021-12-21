@@ -1,6 +1,7 @@
 const initialState = {
     trivia: {},
-    show: 'cover'
+    show: 'cover',
+    answers: []
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -14,6 +15,11 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 show: action.payload
+            }
+        case "POST_ANSWER":
+            return {
+                ...state,
+                answers: state.answers.concat(action.payload)
             }
         default:
             return state;
