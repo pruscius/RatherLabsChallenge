@@ -1,7 +1,12 @@
 const initialState = {
     trivia: {},
     show: 'cover',
-    answers: []
+    answers: [],
+    answered: false,
+    showCorrect: false,
+    questionIndex: 0,
+    changeColorId,
+    changeQuestionId
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -20,6 +25,21 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 answers: state.answers.concat(action.payload)
+            }
+        case "CHANGE_ANSWERED":
+            return {
+                ...state,
+                answered: action.payload
+            }
+        case "CHANGE_SHOW_CORRECT":
+            return {
+                ...state,
+                showCorrect: action.payload
+            }
+        case "CHANGE_QUESTION_INDEX":
+            return {
+                ...state,
+                questionIndex: state.questionIndex + 1
             }
         default:
             return state;
