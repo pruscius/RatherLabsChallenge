@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const GET_TRIVIA = "GET_TRIVIA";
 const SWITCH_SHOW = "SWITCH_SHOW";
-const POST_ACTION = "POST_ACTION";
+const POST_ANSWER = "POST_ANSWER";
 
 export function getTrivia(category) {
     return async function (dispatch) {
@@ -27,7 +27,7 @@ export function switchShow(show) {
 
 export function postAnswer(value) {
     return {
-        type: POST_ACTION,
+        type: POST_ANSWER,
         payload: value
     }
 }

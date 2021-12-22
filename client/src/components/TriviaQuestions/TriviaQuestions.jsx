@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { postAnswer } from '../../common/redux/actions';
 // import ProgressBar from '../ProgressBar/ProgressBar';
@@ -6,11 +7,14 @@ import { postAnswer } from '../../common/redux/actions';
 export default function TriviaQuestions() {
     const dispatch = useDispatch();
     const trivia = useSelector(state => state.trivia);
-    const answers = useSelector(state => state.answers);
 
+    const navigate = useNavigate();
+
+    const [userAnswered, setUserAnswered] = useState(false);
     const [answered, setAnswered] = useState(false);
     const [questionIndex, setQuestionIndex] = useState(0);
     const [showCorrect, setShowCorrect] = useState(false);
+    const [callChangeColor, setCallChangeColor] = useState(false);
 
     var changeColorId;
     var changeQuestionId;
@@ -20,7 +24,10 @@ export default function TriviaQuestions() {
         if (questionIndex < trivia.questions.length - 1) {
             setShowCorrect(false);
             setQuestionIndex(questionIndex => questionIndex + 1);
+            setUserAnswered(false);
             setAnswered(false);
+        } else {
+            navigate("/results");
         }
     }   
     
@@ -30,9 +37,13 @@ export default function TriviaQuestions() {
     
     // CHANGE COLOR
     function changeColor () {
+        if (!userAnswered) {
+            dispatch(postAnswer(false));
+        }
         setAnswered(true);
         setShowCorrect(true);
         changeQuestionTimeout();
+        setCallChangeColor(false);
     }
 
     const changeColorTimeout = () => {
@@ -40,45 +51,24 @@ export default function TriviaQuestions() {
     }
 
     // BUTTON CLICK
-    function handleOptionClick() {
-        // dispatch(postAnswer(option.correct))
-        setAnswered(true);
-        clearTimeout(changeColorId);
-        changeColor();
+    function handleOptionClick(e) {
+        if (!answered) {
+            dispatch(postAnswer(e.target.dataset.correct));
+            setUserAnswered(true);
+            setAnswered(true);
+            clearTimeout(changeColorId);
+            setCallChangeColor(true);
+        }
     }
 
     useEffect(() => {
         if (!answered) {
             changeColorTimeout();
         }
-    })
-
-    // Necesito renderizar un elemento de un array
-    // El renderizado tiene que ocurrir por una determinada (intervalo)
-    // Ese intervalo está determinadd por la propiedad lifetimeSeconds del elemento mismo.
-    // El índice del elemento que renderizo tiene que cambiar cuando se cumple el intervalo.
-    // Entonces, el el índice va a ser dinámico/variable. 
-    // CLAVE: ¿Cómo cambio el valor del índice cuando se cumple el intervalo?
-    //        Escribo una función que utilice:
-    //          - 1) setTimeout
-    //          - 2) setInterval
-    //        En ambos casos, el intervalo va a estar determinado por lifetimeSeconds * 1000. 
-    // PROBLEMAS: dónde ubicar la función set.
-
-    // setTimeout(() => {
-    //     // console.log('OUTER QUESTION INDEX', questionIndex)
-    //     // console.log('OUTER LIFETIMeSEC', trivia.questions[questionIndex].lifetimeSeconds)
-    //     if (questionIndex < trivia.questions.length - 1) {
-    //         // console.log('INNER QUESTION INDEX BEFORE', questionIndex)
-    //         // console.log('INNER LIFETIMESEC BEFORE', trivia.questions[questionIndex].lifetimeSeconds)
-    //         setQuestionIndex(questionIndex => questionIndex + 1);
-    //         // console.log('INNER QUESTION INDEX AFTER', questionIndex)
-    //         // console.log('INNER LIFETIMESEC AFTER', trivia.questions[questionIndex].lifetimeSeconds)
-    //     } 
-    //     // else {
-    //     //     // renderizar resultado
-    //     // }
-    // }, trivia.questions[questionIndex].lifetimeSeconds * 1000);  
+        if (callChangeColor) {
+            changeColor();
+        }
+    }, [callChangeColor, answered]);
 
     return(
         <div>
@@ -90,7 +80,8 @@ export default function TriviaQuestions() {
                 trivia.questions[questionIndex].options.map((option, index) => {
                     return (
                     <p 
-                        onClick={handleOptionClick} 
+                        data-correct={option.correct}
+                        onClick={handleOptionClick}
                         key={index}
                         style={option.correct && showCorrect ? {color: 'green', borderStyle: 'solid'} : null}    
                     >{option.text}</p>

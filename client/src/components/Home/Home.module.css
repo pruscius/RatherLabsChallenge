@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+}
+
+.categoriesContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.containerOne {
+    display: flex;
+    flex-direction: row;
+}
+
+.containerTwo {
+    display: flex;
+    flex-direction: row;
+}
+
+.divCategory {
+    border-style: solid;
+    border-radius: 5px;
+}
+
+.link {
+    text-decoration: none;    
+}
+
