@@ -1,8 +1,13 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { switchShow, postAnswer } from '../../common/redux/actions';
+import styles from './Results.module.css'
 
 export default function Results () {
+    const dispatch = useDispatch();
     const answers = useSelector(state => state.answers);
+
     function getCorrectAnswers(answers) {
         let sum = 0;
         for (let i = 0; i < answers.length; i++) {
@@ -15,9 +20,19 @@ export default function Results () {
     
     const result = correctAnswers * 100 / answers.length;
 
+    function handleGoToHome() {
+        dispatch(switchShow('cover'));
+        dispatch(postAnswer('clean'))
+    }
+
     return ( 
-        <div>
-            <h4>Acertaste el {result}% de las preguntas</h4>
+        <div className={styles.container}>
+            <h4 className={styles.resultMsg}>Acertaste el {result}% de las preguntas</h4>
+            <Link className={styles.link} to="/">
+                <div className={styles.btn} onClick={handleGoToHome}>
+                    <h5 className={styles.btnText}>Volver al Inicio</h5>
+                </div>
+            </Link>
         </div>
     )
 }

@@ -1,0 +1,35 @@
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+}
+
+.loader {
+    align-self: center;
+    justify-self: center;
+}
+
+.categoryName {
+    color: #fff;
+    font-family: 'Nobile', sans-serif
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-style: solid;
+    border-color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 140px;
+    height: 30px;
+    align-self: center;
+}
+
+.btnText {
+    font-family: 'Nobile', sans-serif;
+}

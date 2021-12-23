@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.resultMsg {
+    color: #fff;
+    font-family: 'Nobile', sans-serif;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-style: solid;
+    border-color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 140px;
+    height: 30px;
+    align-self: center;
+}
+
+.btnText {
+    font-family: 'Nobile', sans-serif;
+}

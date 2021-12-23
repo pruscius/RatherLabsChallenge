@@ -10,7 +10,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/play" element={<Trivia />} />
+        <Route path="/play/:category" element={<Trivia />} />
         <Route path="/results" element={<Results />} />
         <Route exact path="/" element={<Home />} />
       </Routes>

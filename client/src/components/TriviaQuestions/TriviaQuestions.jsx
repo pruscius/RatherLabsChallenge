@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { postAnswer } from '../../common/redux/actions';
+import styles from './TriviaQuestions.module.css'
 // import ProgressBar from '../ProgressBar/ProgressBar';
 
 export default function TriviaQuestions() {
@@ -10,6 +11,7 @@ export default function TriviaQuestions() {
 
     const navigate = useNavigate();
 
+    const [selectedAnswer, setSelectedAnswer] = useState('')
     const [userAnswered, setUserAnswered] = useState(false);
     const [answered, setAnswered] = useState(false);
     const [questionIndex, setQuestionIndex] = useState(0);
@@ -53,6 +55,7 @@ export default function TriviaQuestions() {
     // BUTTON CLICK
     function handleOptionClick(e) {
         if (!answered) {
+            setSelectedAnswer(e.target.title)
             dispatch(postAnswer(e.target.dataset.correct));
             setUserAnswered(true);
             setAnswered(true);
@@ -68,23 +71,30 @@ export default function TriviaQuestions() {
         if (callChangeColor) {
             changeColor();
         }
+        return () => clearTimeout(changeColorId);
     }, [callChangeColor, answered]);
 
     return(
-        <div>
+        <div className={styles.container}>
             {/* <ProgressBar lifetimeSeconds={trivia.questions[questionIndex].lifetimeSeconds}/> */}
 
             <img src={trivia.questions[questionIndex].image}/>
-            <h4>{trivia.questions[questionIndex].text}</h4>
+            <h4 className={styles.question}>{trivia.questions[questionIndex].text}</h4>
             {
                 trivia.questions[questionIndex].options.map((option, index) => {
+                    let answerTitle = `option${index}`
                     return (
-                    <p 
+                    <h5 
+                        title={answerTitle}
                         data-correct={option.correct}
                         onClick={handleOptionClick}
                         key={index}
-                        style={option.correct && showCorrect ? {color: 'green', borderStyle: 'solid'} : null}    
-                    >{option.text}</p>
+                        className={
+                            option.correct && showCorrect ? styles.correctOption 
+                            : showCorrect && selectedAnswer === answerTitle ? styles.incorrectOption
+                            : styles.option
+                        }   
+                    >{option.text}</h5>
                 )})
             }
         </div>

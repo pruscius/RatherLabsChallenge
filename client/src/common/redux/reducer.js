@@ -17,10 +17,16 @@ const rootReducer = (state = initialState, action) => {
                 show: action.payload
             }
         case "POST_ANSWER":
-            console.log(action.payload);
-            return {
-                ...state,
-                answers: state.answers.concat(action.payload)
+            if (action.payload === 'clean') {
+                return {
+                    ...state,
+                    answers: []
+                }
+            } else {
+                return {
+                    ...state,
+                    answers: state.answers.concat(action.payload)
+                }
             }
         default:
             return state;

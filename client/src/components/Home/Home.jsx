@@ -1,59 +1,77 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { getTrivia } from '../../common/redux/actions';
-import {  useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import styles from './Home.module.css'
 
 export default function Home() {
-    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     function handleClick(e) {
-        dispatch(getTrivia(e.target.title));
+        navigate(`/play/${e.target.title}`)
     }
 
   return(
     <div className={styles.container}>
 
+        <div>
+            <h3 className={styles.title}>Bienvenidos a</h3>
+
+            <h1 className={styles.titleName}>Trivia Questions</h1>
+        </div>
+
         <div className={styles.categoriesContainer}> 
         
             <div className={styles.containerOne}>
-                <div className={styles.divCategory}>
-                    <Link className={styles.link} to="/play">
-                        <h3 title='historia' onClick={(e) => handleClick(e)}>Historia</h3>
-                    </Link>
+                <div className={`${styles.divCategory} ${styles.history}`}>
+                    <h3 
+                        title='historia' 
+                        className={styles.catTitle} 
+                        onClick={(e) => handleClick(e)}
+                    >Historia</h3>
                 </div>
 
-                <div className={styles.divCategory}>
-                    <Link className={styles.link} to="/play">
-                        <h3 title='ciencia' onClick={(e) => handleClick(e)}>Ciencia</h3>
-                    </Link>
+                <div className={`${styles.divCategory} ${styles.science}`}>
+                    <h3 
+                        title='ciencia' 
+                        className={styles.catTitle} 
+                        onClick={(e) => handleClick(e)}
+                    >Ciencia</h3>
                 </div>
 
-                <div className={styles.divCategory}>
-                    <Link className={styles.link} to="/play">
-                        <h3 title='deportes' onClick={(e) => handleClick(e)}>Deportes</h3>
-                    </Link>
+                <div className={`${styles.divCategory} ${styles.sports}`}>
+                    <h3 
+                        title='deportes' 
+                        className={styles.catTitle} 
+                        onClick={(e) => handleClick(e)}
+                    >Deportes</h3>
                 </div>
             </div>
 
             <div className={styles.containerTwo}>
-                <div className={styles.divCategory}>
-                    <Link className={styles.link} to="/play">
-                        <h3 title='arte' onClick={(e) => handleClick(e)}>Arte</h3>
-                    </Link>
-                </div>
 
-                <div className={styles.divCategory}>
-                    <Link className={styles.link} to="/play">
-                        <h3 title='entretenimiento' onClick={(e) => handleClick(e)}>Entretenimiento</h3>
-                    </Link>
+                <div className={`${styles.divCategory} ${styles.arts}`}>
+                    <h3 
+                        title='arte' 
+                        className={styles.catTitle} 
+                        onClick={(e) => handleClick(e)}
+                    >Arte</h3>
                 </div>
-
-                <div className={styles.divCategory}>
-                    <Link className={styles.link} to="/play">
-                        <h3 title='geografia' onClick={(e) => handleClick(e)}>Geografía</h3>
-                    </Link>
+           
+                <div className={`${styles.divCategory} ${styles.entertainment}`}>
+                    <h3 
+                        title='entretenimiento' 
+                        className={styles.catTitle} 
+                        onClick={(e) => handleClick(e)}
+                    >Entretenimiento</h3>
                 </div>
+                
+                <div className={`${styles.divCategory} ${styles.geography}`}>
+                    <h3 
+                        title='geografia' 
+                        className={styles.catTitle} 
+                        onClick={(e) => handleClick(e)}
+                    >Geografía</h3>
+                </div>
+                
             </div>
                 
         </div>

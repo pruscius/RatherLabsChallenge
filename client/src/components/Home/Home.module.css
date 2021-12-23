@@ -1,5 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Licorice&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nobile&display=swap");
+
 .container {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    color: #fff;
+    font-family: 'Nobile', sans-serif;
+    margin: 36px 0 0 0 ;
+    padding: 0
+}
+
+
+.titleName {
+    color: #fff;
+    font-family: 'Licorice', cursive;
+    font-size: 90px;
+    margin: 0;
+    padding: 0;
 }
 
 .categoriesContainer {
@@ -20,9 +42,44 @@
 .divCategory {
     border-style: solid;
     border-radius: 5px;
+    border-color: #fff;
+    width: 235px;
+    height: 150px
 }
 
-.link {
-    text-decoration: none;    
+.catTitle {
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Nobile', sans-serif;
 }
 
+.history {
+    background-image: url("../../common/assets/history.png");
+    background-size: cover;
+}
+
+.science {
+    background-image: url("../../common/assets/science.jpg");
+    background-size: cover;
+}
+
+.sports {
+    background-image: url("../../common/assets/sports.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.arts {
+    background-image: url("../../common/assets/arts2.jpg");
+    background-size: cover;
+}
+
+.entertainment {
+    background-image: url("../../common/assets/entertainment.jpg");
+    background-size: cover;
+}
+
+.geography {
+    background-image: url("../../common/assets/geography.jpg");
+    background-size: cover;
+}
