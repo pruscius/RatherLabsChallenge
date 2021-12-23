@@ -1,12 +1,10 @@
 .container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
 }
 
 .back {
-    align-self: flex-start;
-    justify-self: flex-start;
+    margin-left: 15px;
     color: #fff;
     cursor: pointer;
 }

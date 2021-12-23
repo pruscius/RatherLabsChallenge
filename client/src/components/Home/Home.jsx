@@ -1,96 +1,101 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Home.module.css'
 
 export default function Home() {
     const navigate = useNavigate();
 
+    const [shade, setShade] = useState('');
+
     function handleClick(e) {
         navigate(`/play/${e.target.title}`)
     }
 
-  return(
-    <div className={styles.container}>
+    function handleMouseOver(e) {
+        setShade(e.target.title);
+    }
 
-        <div>
-            <h3 className={styles.title}>Bienvenidos a</h3>
+    function handleMouseOut() {
+        setShade(false);
+    }
 
-            <h1 className={styles.titleName}>Trivia Questions</h1>
-        </div>
+    return(
+        <div className={styles.container}>
 
-        <div className={styles.categoriesContainer}> 
-        
-            <div className={styles.containerOne}>
-                <div className={`${styles.divCategory} ${styles.history}`}>
-                    <h3 
+            <div>
+                <h3 className={styles.title}>Bienvenidos a</h3>
+                <h1 className={styles.titleName}>Trivia Questions</h1>
+            </div>
+
+            <div className={styles.categoriesContainer}> 
+            
+                <div className={styles.containerOne}>
+                    <div 
+                        className={`${styles.divCategory} ${styles.history} ${shade === 'historia' ? styles.shade : null}`}
                         title='historia' 
-                        className={styles.catTitle} 
                         onClick={(e) => handleClick(e)}
-                    >Historia</h3>
-                </div>
+                        onMouseOver={handleMouseOver}
+                        onMouseOut={handleMouseOut}
+                    >
+                        <h3 className={styles.catTitle}>Historia</h3>
+                    </div>
 
-                <div className={`${styles.divCategory} ${styles.science}`}>
-                    <h3 
+                    <div 
+                        className={`${styles.divCategory} ${styles.science} ${shade === 'ciencia' ? styles.shade : null}`}
                         title='ciencia' 
-                        className={styles.catTitle} 
                         onClick={(e) => handleClick(e)}
-                    >Ciencia</h3>
-                </div>
+                        onMouseOver={handleMouseOver}
+                        onMouseOut={handleMouseOut}
+                    >
+                        <h3 className={styles.catTitle}>Ciencia</h3>
+                    </div>
 
-                <div className={`${styles.divCategory} ${styles.sports}`}>
-                    <h3 
+                    <div 
+                        className={`${styles.divCategory} ${styles.sports} ${shade === 'deportes' ? styles.shade : null}`}
                         title='deportes' 
-                        className={styles.catTitle} 
                         onClick={(e) => handleClick(e)}
-                    >Deportes</h3>
+                        onMouseOver={handleMouseOver}
+                        onMouseOut={handleMouseOut}
+                    >
+                        <h3 className={styles.catTitle}>Deportes</h3>
+                    </div>
                 </div>
-            </div>
 
-            <div className={styles.containerTwo}>
+                <div className={styles.containerTwo}>
 
-                <div className={`${styles.divCategory} ${styles.arts}`}>
-                    <h3 
+                    <div 
+                        className={`${styles.divCategory} ${styles.arts} ${shade === 'arte' ? styles.shade : null}`}
                         title='arte' 
-                        className={styles.catTitle} 
                         onClick={(e) => handleClick(e)}
-                    >Arte</h3>
-                </div>
-           
-                <div className={`${styles.divCategory} ${styles.entertainment}`}>
-                    <h3 
+                        onMouseOver={handleMouseOver}
+                        onMouseOut={handleMouseOut}
+                    >
+                        <h3 className={styles.catTitle}>Arte</h3>
+                    </div>
+            
+                    <div 
+                        className={`${styles.divCategory} ${styles.entertainment} ${shade === 'entretenimiento' ? styles.shade : null}`}
                         title='entretenimiento' 
-                        className={styles.catTitle} 
-                        onClick={(e) => handleClick(e)}
-                    >Entretenimiento</h3>
-                </div>
-                
-                <div className={`${styles.divCategory} ${styles.geography}`}>
-                    <h3 
+                        onClick={(e) => handleClick(e)}    
+                        onMouseOver={handleMouseOver}
+                        onMouseOut={handleMouseOut}
+                    >
+                        <h3 className={styles.catTitle}>Entretenimiento</h3>
+                    </div>
+                    
+                    <div 
+                        className={`${styles.divCategory} ${styles.geography} ${shade === 'geografia' ? styles.shade : null}`}
                         title='geografia' 
-                        className={styles.catTitle} 
                         onClick={(e) => handleClick(e)}
-                    >Geografía</h3>
+                        onMouseOver={handleMouseOver}
+                        onMouseOut={handleMouseOut}
+                    >
+                        <h3 className={styles.catTitle}>Geografía</h3>
+                    </div>
+                    
                 </div>
-                
+                    
             </div>
-                
         </div>
-    </div>
-)
+    )
 }
-
-// {
-//     categories.map((category, index) => (      
-          
-//         <Link key={index} to="/play">
-//             <div 
-//                 className={styles.divCategory}
-//                 key={index} 
-//                 title={category === 'Geografía' ? 'geografia' : category.toLowerCase()} 
-//                 onClick={(e) => handleClick(e)}
-//             >
-//                 {category}
-//             </div>
-//         </Link>
-//     ))
-// }

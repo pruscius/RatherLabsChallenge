@@ -27,9 +27,13 @@ export default function Trivia () {
         <div className={styles.container}>
             <h2 className={styles.back} onClick={handleBack}>{'\u{1F870}'}</h2>
                { show === 'cover' ?
-                <TriviaCover />
+                <div className={styles.cover}>
+                    <TriviaCover />
+                </div>
                 : 
-               <TriviaQuestions />
+                <div>
+                    <TriviaQuestions />
+                </div>
             }
         </div>
     )

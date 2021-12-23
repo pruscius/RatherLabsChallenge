@@ -17,19 +17,24 @@
 }
 
 .btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    border-style: solid;
-    border-color: #fff;
     cursor: pointer;
     border-radius: 4px;
-    width: 140px;
+    width: 110px;
     height: 30px;
-    align-self: center;
+    font-family: 'Nobile', sans-serif;
+    margin-bottom: 20px;
+    background-color: rgb(190, 17, 17);
+    border-width: 1.4px;
+    border-style: none;
+    font-weight: bold;
+    border-color: #fff;
+    color: #fff;
 }
 
-.btnText {
-    font-family: 'Nobile', sans-serif;
+.btn:hover {
+    color: rgb(190, 17, 17);;
+    background-color: #ccc;
+    border-style: solid;
+    border-color: #ccc;
+    transition: 0.3s
 }

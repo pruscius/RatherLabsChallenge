@@ -29,9 +29,9 @@ export default function Results () {
         <div className={styles.container}>
             <h4 className={styles.resultMsg}>Acertaste el {result}% de las preguntas</h4>
             <Link className={styles.link} to="/">
-                <div className={styles.btn} onClick={handleGoToHome}>
-                    <h5 className={styles.btnText}>Volver al Inicio</h5>
-                </div>
+                <button className={styles.btn} onClick={handleGoToHome}>
+                   Volver al Inicio
+                </button>
             </Link>
         </div>
     )

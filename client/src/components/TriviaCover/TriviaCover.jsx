@@ -27,9 +27,9 @@ export default function TriviaCover () {
                 <>
                     <h1 className={styles.categoryName}>{trivia.title}</h1>
                     <img src={trivia.image} alt="chains"/>
-                    <div className={styles.btn} onClick={handleStartClick}>
-                        <h5 className={styles.btnText}>Comenzar</h5>
-                    </div>
+                    <button className={styles.btn} onClick={handleStartClick}>
+                        Comenzar
+                    </button>
                 </>
             }
         </div>
