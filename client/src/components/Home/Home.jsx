@@ -19,6 +19,12 @@ export default function Home() {
         setShade(false);
     }
 
+    function handleRandomCategory() { 
+        let categories = ['historia', 'geografia', 'deportes', 'arte', 'entretenimiento', 'ciencia']
+        let category = categories[Math.floor(Math.random() * 6)];
+        navigate(`/play/${category}`);
+    }
+
     return(
         <div className={styles.container}>
 
@@ -95,6 +101,7 @@ export default function Home() {
                     
                 </div>
                     
+                    <button className={styles.btn} onClick={handleRandomCategory}>Seleccionar al azar</button>
             </div>
         </div>
     )

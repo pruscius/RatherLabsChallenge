@@ -15,7 +15,7 @@ export default function Trivia () {
 
     function handleBack() {
         dispatch(switchShow('cover'));
-        dispatch(postAnswer('clean'))
+        dispatch(postAnswer('clean'));
         navigate("/");
     }
 

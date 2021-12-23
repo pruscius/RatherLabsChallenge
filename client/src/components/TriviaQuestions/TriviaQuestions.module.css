@@ -5,6 +5,10 @@
     font-family: 'Nobile', sans-serif;
 }
 
+.timer {
+    color: #fff;
+}
+
 .question {
     color: #fff;
 }
@@ -37,4 +41,13 @@
 .incorrectOption {
     border-color: red;
     background-color: red;
+}
+
+.numberQuestions {
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.progressBar {
+    margin-bottom: 12px;
 }

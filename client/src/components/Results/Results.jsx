@@ -30,7 +30,7 @@ export default function Results () {
             <h4 className={styles.resultMsg}>Acertaste el {result}% de las preguntas</h4>
             <Link className={styles.link} to="/">
                 <button className={styles.btn} onClick={handleGoToHome}>
-                   Volver al Inicio
+                   Volver a jugar
                 </button>
             </Link>
         </div>

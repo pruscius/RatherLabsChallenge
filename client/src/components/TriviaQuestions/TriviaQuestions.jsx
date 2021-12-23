@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { postAnswer } from '../../common/redux/actions';
 import styles from './TriviaQuestions.module.css'
-// import ProgressBar from '../ProgressBar/ProgressBar';
+import ProgressBar from "@ramonak/react-progress-bar";
 
 export default function TriviaQuestions() {
     const dispatch = useDispatch();
@@ -17,6 +17,9 @@ export default function TriviaQuestions() {
     const [questionIndex, setQuestionIndex] = useState(0);
     const [showCorrect, setShowCorrect] = useState(false);
     const [callChangeColor, setCallChangeColor] = useState(false);
+    const [time, setTime] = useState(trivia.questions[questionIndex].lifetimeSeconds);
+
+    const percentage = questionIndex * 100 / trivia.questions.length;
 
     var changeColorId;
     var changeQuestionId;
@@ -71,13 +74,18 @@ export default function TriviaQuestions() {
         if (callChangeColor) {
             changeColor();
         }
+        // let timerId = null;
+        // timerId = setTimeout(() => {
+        //     setTime(time => time - 1) 
+        // }, 1000)
         return () => clearTimeout(changeColorId);
-    }, [callChangeColor, answered]);
+    }, [callChangeColor, answered, time]);
+
 
     return(
         <div className={styles.container}>
-            {/* <ProgressBar lifetimeSeconds={trivia.questions[questionIndex].lifetimeSeconds}/> */}
 
+            <h3 className={styles.timer}>{time}</h3>
             <img src={trivia.questions[questionIndex].image}/>
             <h4 className={styles.question}>{trivia.questions[questionIndex].text}</h4>
             {
@@ -97,6 +105,15 @@ export default function TriviaQuestions() {
                     >{option.text}</h5>
                 )})
             }
+            <h6 className={styles.numberQuestions}>{questionIndex} de {trivia.questions.length} preguntas respondidas</h6>
+            <div className={styles.progressBar}>
+                <ProgressBar 
+                    completed={percentage}
+                    width={200}
+                    height={8}
+                    isLabelVisible={false}
+                />
+            </div>
         </div>
     )
 }
