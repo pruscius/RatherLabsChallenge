@@ -1,0 +1,54 @@
+{
+    "title": "Entretenimiento",
+    "image": "https://www.pwc.com/gx/en/entertainment-media/outlook-2021/gemo-anchor-super-hero.jpg",
+    "category": "entretenimiento",
+    "questions": [
+        {
+        "text": "¿Cuál fue la primera película de Disney?",
+        "image":
+        "https://lumiere-a.akamaihd.net/v1/images/disneyplus_disney_psq_6a2d4740.jpeg?region=0,0,800,600",
+        "lifetimeSeconds": 10,
+        "options": [
+            { "text": "Las Aventuras de Mickey Mouse", "correct": false },
+            { "text": "Caperucita Roja", "correct": false },
+            { "text": "Blancanieves", "correct": true },
+            { "text": "El Rey León", "correct": false }
+        ]
+        },
+        {
+        "text": "¿Qué personaje interpreta John Travolta en 'Grease'?",
+        "image": "https://gcdn.emol.cl/celebridades/files/2015/07/john-travolta.jpg",
+        "lifetimeSeconds": 10,
+        "options": [
+            { "text": "Luke Skywalker", "correct": false },
+            { "text": "Thomas Anderson", "correct": false },
+            { "text": "Tyler Durden", "correct": false },
+            { "text": "Danny Zuko", "correct": true }
+        ]
+        },
+        {
+            "text": "¿Con quién está casada Wanda Nara?",
+        "image":
+        "https://www.soyfutbol.com/__export/1623625623320/sites/debate/img/2021/06/13/wanda_nara_parxs_saint_germain_ligue_1_instagram.jpg_423682103.jpg",
+        "lifetimeSeconds": 10,
+        "options": [
+            { "text": "Leo Ponzio", "correct": false },
+            { "text": "Maxi Lopez", "correct": false },
+            { "text": "Kun Agüero", "correct": false },
+            { "text": "Mauro Icardi", "correct": true }
+        ]
+        },
+        {
+        "text": "¿Cuál de estas novelas no fue producida por Cris Morena?",
+        "image":
+        "https://www.cmtv.com.ar/imagenes_artistas/2779.jpg?Cris%20Morena",
+        "lifetimeSeconds": 10,
+        "options": [
+            { "text": "Casi Ángeles", "correct": false },
+            { "text": "Chiquititas", "correct": false },
+            { "text": "Buenos Vecinos", "correct": true },
+            { "text": "Rebelde Way", "correct": false }
+        ]
+        }
+        ]
+}

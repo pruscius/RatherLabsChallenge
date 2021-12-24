@@ -1,0 +1,54 @@
+{
+    "title": "Arte",
+    "image": "https://www.gsineducation.com/wp-content/uploads/2020/09/eCorner_Arts_Tech5-960x541-1.jpg",
+    "category": "arte",
+    "questions": [
+        {
+        "text": "¿Quién pintó la Mona Lisa?",
+        "image":
+        "https://images.theconversation.com/files/430032/original/file-20211103-23-1lapvgt.jpeg?ixlib=rb-1.1.0&rect=0%2C38%2C6431%2C6585&q=20&auto=format&w=320&fit=clip&dpr=2&usm=12&cs=strip",
+        "lifetimeSeconds": 10,
+        "options": [
+            { "text": "Vincent Van Gogh", "correct": false },
+            { "text": "Leonardo Da Vinci", "correct": true },
+            { "text": "Salvador Dalí", "correct": false },
+            { "text": "Pablo Picasso", "correct": false }
+        ]
+        },
+        {
+        "text": "¿En qué ciudad se construyó la Sagrada Familia?",
+        "image": "https://images.adsttc.com/media/images/57fe/7725/e58e/cef4/c400/003a/newsletter/Sagrada_Familia_haschelsax_02.jpg?1476294424",
+        "lifetimeSeconds": 10,
+        "options": [
+            { "text": "Madrid", "correct": false },
+            { "text": "Minsk", "correct": false },
+            { "text": "Viena", "correct": false },
+            { "text": "Barcelona", "correct": true }
+        ]
+        },
+        {
+            "text": "¿Cómo murió John Lennon?",
+        "image":
+        "https://cnnespanol.cnn.com/wp-content/uploads/2021/12/211209185656-lennon-full-169.jpg?quality=100&strip=info&w=414&h=311&crop=1",
+        "lifetimeSeconds": 10,
+        "options": [
+            { "text": "Asesinado con un arma de fuego", "correct": true },
+            { "text": "Por suicidio", "correct": false },
+            { "text": "Por sobredosis", "correct": false },
+            { "text": "Aún sigue vivo", "correct": false }
+        ]
+        },
+        {
+        "text": "¿Quién es el autor de Les Miserables?",
+        "image":
+        "https://media.tacdn.com/media/attractions-splice-spp-674x446/0a/b2/b3/67.jpg",
+        "lifetimeSeconds": 10,
+        "options": [
+            { "text": "George Gershwin", "correct": false },
+            { "text": "Lin-Manuel Miranda", "correct": false },
+            { "text": "Victor Hugo", "correct": true },
+            { "text": "Andrew Lloyd Webber", "correct": false }
+        ]
+        }
+        ]
+}

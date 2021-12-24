@@ -1,0 +1,54 @@
+{
+    "title": "Ciencia",
+    "image": "https://plustatic.com/1604/conversions/tipos-ciencia-social.jpg",
+    "category": "ciencia",
+    "questions": [
+        {
+        "text": "¿Cuál es la composición molecular del agua?",
+        "image":
+        "https://cdn.editage.com/insights/editagecom/production/styles/detail_page_image/public/TUSCE_42_thumbnail%20image.jpg?itok=ORUUoUKP",
+        "lifetimeSeconds": 10,
+        "options": [
+            { "text": "CH40", "correct": false },
+            { "text": "O2", "correct": false },
+            { "text": "H20", "correct": true },
+            { "text": "OH2", "correct": false }
+        ]
+        },
+        {
+        "text": "¿Qué elemento se utiliza en los termómetros para medir la temperatura?",
+        "image": "https://pedidosfarma.vteximg.com.br/arquivos/ids/166716-1000-1000/Aspen-Mt31-Termometro-Digital-1.jpg?v=637050381791400000",
+        "lifetimeSeconds": 10,
+        "options": [
+            { "text": "Mercurio", "correct": true },
+            { "text": "Magnesio", "correct": false },
+            { "text": "Manganeso", "correct": false },
+            { "text": "Mendelevio", "correct": false }
+        ]
+        },
+        {
+            "text": "El petróleo, el gas y el carbón son ejemplos de...",
+        "image":
+        "https://t1.ev.ltmcdn.com/es/posts/9/4/3/que_son_los_combustibles_fosiles_y_como_se_formaron_1349_600_square.jpg",
+        "lifetimeSeconds": 10,
+        "options": [
+            { "text": "Recursos renovables", "correct": false },
+            { "text": "Combustibles fósiles", "correct": true },
+            { "text": "Biocombustibles", "correct": false },
+            { "text": "Recursos geotérmicos", "correct": false }
+        ]
+        },
+        {
+        "text": "¿Qué gas de la atmósfera nos protege de la radiación ultravioleta?",
+        "image":
+        "data:image/jpeg;base64,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",
+        "lifetimeSeconds": 10,
+        "options": [
+            { "text": "El ozono", "correct": true },
+            { "text": "El nitrógeno", "correct": false },
+            { "text": "El helio", "correct": false },
+            { "text": "El gas lacrimógeno", "correct": false }
+        ]
+        }
+        ]
+}
