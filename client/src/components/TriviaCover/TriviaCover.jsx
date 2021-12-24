@@ -28,9 +28,14 @@ export default function TriviaCover () {
                 :
                 <>
                     <h1 className={styles.categoryName}>{trivia.title}</h1>
-                    <center><h5 className={styles.startMsg}>Para ganar debes contestar bien el 75% de las preguntas.
-                    <br/> Tienes 10 segundos para contestar cada pregunta.</h5></center>
-                    <h4 className={styles.instructionsMsg}>¿Estás listo? ¡Presiona 'Comenzar' para empezar a jugar!</h4>
+                    <center>
+                        <h5 className={styles.startMsg}>Para ganar debes contestar bien el 75% de las preguntas.
+                            <br/> Tienes 10 segundos para contestar cada pregunta.
+                        </h5>
+                    </center>
+                    <center>
+                        <h4 className={styles.instructionsMsg}>¿Estás listo? ¡Presiona 'Comenzar' para empezar a jugar!</h4>
+                    </center>
                     <img className={styles.coverImg} src={trivia.image} alt="chains"/>
                     <button className={styles.btn} onClick={handleStartClick}>
                         Comenzar

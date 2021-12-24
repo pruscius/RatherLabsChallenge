@@ -18,11 +18,14 @@ export default function TriviaQuestions() {
     const [showCorrect, setShowCorrect] = useState(false);
     const [callChangeColor, setCallChangeColor] = useState(false);
     const [time, setTime] = useState(trivia.questions[questionIndex].lifetimeSeconds);
+    // const [firstCall, setFirstCall] = useState(true);
+    // const [timerOn, setTimerOn] = useState(true);
 
     const percentage = questionIndex * 100 / trivia.questions.length;
 
     var changeColorId;
     var changeQuestionId;
+    // var timerInterval;
 
     // CHANGE INDEX
     function changeIndex() {
@@ -50,7 +53,7 @@ export default function TriviaQuestions() {
         changeQuestionTimeout();
         setCallChangeColor(false);
     }
-
+    
     const changeColorTimeout = () => {
         changeColorId = setTimeout(changeColor, trivia.questions[questionIndex].lifetimeSeconds * 1000);
     }
@@ -58,7 +61,7 @@ export default function TriviaQuestions() {
     // BUTTON CLICK
     function handleOptionClick(e) {
         if (!answered) {
-            setSelectedAnswer(e.target.title)
+            setSelectedAnswer(e.target.title);
             dispatch(postAnswer(e.target.dataset.correct));
             setUserAnswered(true);
             setAnswered(true);
@@ -67,27 +70,34 @@ export default function TriviaQuestions() {
         }
     }
 
+    // function startTimer () {
+    //     timerInterval = setInterval(() => {
+    //         setTime(time => time -1);
+    //     }, 1000);
+    // }
+
     useEffect(() => {
+        // if (timerOn) {
+        //     startTimer();
+        //     setTimerOn(false);
+        // }
         if (!answered) {
             changeColorTimeout();
         }
         if (callChangeColor) {
             changeColor();
         }
-        // let timerId = null;
-        // timerId = setTimeout(() => {
-        //     setTime(time => time - 1) 
-        // }, 1000)
-        return () => clearTimeout(changeColorId);
+        return () => {
+            clearTimeout(changeColorId);
+        };
     }, [callChangeColor, answered, time]);
 
 
     return(
         <div className={styles.container}>
-
-            <h3 className={styles.timer}>{time}</h3>
-            <img src={trivia.questions[questionIndex].image}/>
-            <h4 className={styles.question}>{trivia.questions[questionIndex].text}</h4>
+            {/* <h3 className={styles.timer}>{time}</h3> */}
+            <img className={styles.img} src={trivia.questions[questionIndex].image}/>
+            <center><h4 className={styles.question}>{trivia.questions[questionIndex].text}</h4></center>
             {
                 trivia.questions[questionIndex].options.map((option, index) => {
                     let answerTitle = `option${index}`

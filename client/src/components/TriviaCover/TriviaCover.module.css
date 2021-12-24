@@ -33,8 +33,9 @@
 }
 
 .coverImg {
+    max-width: 90%;
+    max-height: 90%;
     width: 540px;
-    height: 310px;
     border-style: solid;
     border-color: #ccc;
     border-width: 2px;
