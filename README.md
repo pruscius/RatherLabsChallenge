@@ -2,18 +2,20 @@
 
 # API
 
-If you wish to test the API for this project, cd into /api and run:
+If you wish to test the API on this project, cd into /api and run:
 
 ### `npm install`
 
-To install the containig packages.
+To install the containing packages.
 
 ### `npm start`
 
-Will run the server side on http://localhost:3000.
+Will run the server side on http://localhost:3001
 
 Currently, the client side code makes requests to a deployed version of this API, hosted by Heroku.
-You can make requests to the local version of this API by uncommenting line 10 at /client/src/common/redux/actions.js and commenting line 11.
+You can make requests to the local version by uncommenting line 10 at /client/src/common/redux/actions.js, followed by commenting line 11.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
